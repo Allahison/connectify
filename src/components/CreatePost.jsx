@@ -90,12 +90,23 @@ export default function CreatePost({ onPostCreated }) {
           />
           
           {mediaFile && (
-            <div className="relative inline-block mt-3 border border-border rounded-xl p-2 bg-secondary/20">
-              <span className="text-sm font-medium pr-8 truncate max-w-xs block">{mediaFile.name}</span>
+            <div className="relative mt-3 rounded-2xl overflow-hidden border border-border bg-black/5 max-h-80 group">
+              {mediaFile.type.startsWith('image/') ? (
+                <img 
+                  src={URL.createObjectURL(mediaFile)} 
+                  alt="preview" 
+                  className="w-full h-full object-contain max-h-80" 
+                />
+              ) : (
+                <div className="p-4 flex items-center gap-3 bg-secondary/20">
+                  <Video className="h-5 w-5 text-primary" />
+                  <span className="text-sm font-medium truncate">{mediaFile.name}</span>
+                </div>
+              )}
               <button 
                 type="button" 
                 onClick={() => setMediaFile(null)} 
-                className="absolute right-2 top-2 text-muted hover:text-red-500 bg-background/80 rounded-full"
+                className="absolute right-2 top-2 p-1.5 bg-background/80 hover:bg-background text-foreground rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all"
               >
                 <X className="h-4 w-4" />
               </button>

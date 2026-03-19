@@ -154,7 +154,7 @@ const PostCard = memo(({ post, onDelete }) => {
               {post.media_url.match(/\.(mp4|webm|ogg|mov)(\?.*)?$/i) ? (
                 <video src={post.media_url} controls className="w-full max-h-[500px] object-contain" />
               ) : (
-                <img src={post.media_url} alt="Attachment" className="w-full object-cover max-h-96" />
+                <img src={post.media_url} alt="Attachment" className="w-full object-contain max-h-[70vh] bg-black/5" />
               )}
             </div>
           )}

@@ -57,6 +57,25 @@ Connectify is a modern, full-stack social media application designed for seamles
 
 The application will be available at `http://localhost:5173`.
 
+## 🚀 Live Demo
+
+Check out the live version of Connectify:
+
+🔗 https://connectify-alpha-nine.vercel.app/
+
+---
+
+## 🌐 Deployment (Vercel)
+
+1. **Push your code** to GitHub/GitLab/Bitbucket.
+2. **Connect your repository** to Vercel.
+3. **Configure the Project**:
+   - **Framework Preset**: Vite
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+   - **Install Command**: `npm install`
+4. **Environment Variables**: Add your `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` to Vercel's Environment Variables settings.
+
 ## 📂 Project Structure
 
 - `src/components`: Reusable UI components.
@@ -65,10 +84,6 @@ The application will be available at `http://localhost:5173`.
 - `src/services`: API calls and Supabase client configuration.
 - `src/assets`: Static assets like images and styles.
 
-## 🚀 Live Demo
+## 📄 License
 
-Check out the live version of Connectify:
-
-🔗 https://connectify-alpha-nine.vercel.app/
-
----
+This project is licensed under the MIT License.
