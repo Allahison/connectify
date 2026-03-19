@@ -69,6 +69,6 @@ The application will be available at `http://localhost:5173`.
 
 Check out the live version of Connectify:
 
-🔗 https://connectify-hdcwpq3pi-muammad-arslans-projects.vercel.app/
+🔗 https://connectify-alpha-nine.vercel.app/
 
 ---
