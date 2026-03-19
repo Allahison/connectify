@@ -65,25 +65,4 @@ Check out the live version of Connectify:
 
 ---
 
-## 🌐 Deployment (Vercel)
 
-1. **Push your code** to GitHub/GitLab/Bitbucket.
-2. **Connect your repository** to Vercel.
-3. **Configure the Project**:
-   - **Framework Preset**: Vite
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist`
-   - **Install Command**: `npm install`
-4. **Environment Variables**: Add your `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` to Vercel's Environment Variables settings.
-
-## 📂 Project Structure
-
-- `src/components`: Reusable UI components.
-- `src/pages`: Main application screens (Feed, Explore, Messages, etc.).
-- `src/redux`: State management logic and slices.
-- `src/services`: API calls and Supabase client configuration.
-- `src/assets`: Static assets like images and styles.
-
-## 📄 License
-
-This project is licensed under the MIT License.
