@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Ethereal Light Theme */
+    --app-bg: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    --background: rgba(255, 255, 255, 0.7);
+    --foreground: #0f172a;
+    --primary: #3b82f6;
+    --primary-glow: rgba(59, 130, 246, 0.4);
+    --secondary: rgba(241, 245, 249, 0.5);
+    --accent: #f59e0b;
+    --muted: #64748b;
+    --border: rgba(226, 232, 240, 0.6);
+  }
+
+  .theme-dark {
+    /* Deep Space Dark Theme */
+    --app-bg: radial-gradient(circle at top left, #1e1b4b, #020617 80%);
+    --background: rgba(15, 23, 42, 0.55);
+    --foreground: #f8fafc;
+    --primary: #6366f1;
+    --primary-glow: rgba(99, 102, 241, 0.5);
+    --secondary: rgba(30, 41, 59, 0.6);
+    --accent: #8b5cf6;
+    --muted: #94a3b8;
+    --border: rgba(51, 65, 85, 0.5);
+  }
+
+  .theme-neon {
+    /* Cyberpunk Matrix Theme */
+    --app-bg: linear-gradient(to bottom right, #000000, #0a0a0a);
+    --background: rgba(9, 9, 11, 0.7);
+    --foreground: #ecfdf5;
+    --primary: #10b981;
+    --primary-glow: rgba(16, 185, 129, 0.65);
+    --secondary: rgba(6, 78, 59, 0.3);
+    --accent: #34d399;
+    --muted: #a7f3d0;
+    --border: rgba(4, 120, 87, 0.7);
+  }
+
+  .theme-ocean {
+    /* Deep Sea Bioluminescence */
+    --app-bg: radial-gradient(circle at center, #0c4a6e, #082f49 100%);
+    --background: rgba(8, 47, 73, 0.45);
+    --foreground: #f0f9ff;
+    --primary: #0ea5e9;
+    --primary-glow: rgba(14, 165, 233, 0.5);
+    --secondary: rgba(12, 74, 110, 0.4);
+    --accent: #38bdf8;
+    --muted: #bae6fd;
+    --border: rgba(3, 105, 161, 0.4);
+  }
+
+  .theme-sunset {
+    /* Golden Twilight */
+    --app-bg: linear-gradient(135deg, #4c1d95 0%, #be123c 50%, #ea580c 100%);
+    --background: rgba(10, 10, 10, 0.45);
+    --foreground: #fff7ed;
+    --primary: #f97316;
+    --primary-glow: rgba(249, 115, 22, 0.6);
+    --secondary: rgba(124, 45, 18, 0.3);
+    --accent: #fb923c;
+    --muted: #fed7aa;
+    --border: rgba(154, 52, 18, 0.5);
+  }
+}
+
+body {
+  background: var(--app-bg);
+  background-attachment: fixed;
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: var(--foreground);
+  transition: color 0.3s ease;
+  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.01em;
+  min-height: 100vh;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@layer utilities {
+  /* Inject professional glassmorphism automatically into backgrounds */
+  .bg-background {
+    background-color: var(--background);
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  .bg-secondary {
+    background-color: var(--secondary);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* Global Floating Glows for Primary Elements */
+button.bg-primary, .bg-primary {
+  box-shadow: 0 4px 14px 0 var(--primary-glow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button.bg-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px 0 var(--primary-glow);
+}
+
+/* Exclude inputs from floating off the screen if they have bg-primary (rare but safe) */
+input.bg-primary:hover {
+  transform: none;
+}
+
+/* Professional Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
